@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/diet-calculator/static/css/main.073c9b0a.css",
-    "main.js": "/diet-calculator/static/js/main.441251b5.js",
+    "main.js": "/diet-calculator/static/js/main.e449a746.js",
     "static/js/787.14b23cc3.chunk.js": "/diet-calculator/static/js/787.14b23cc3.chunk.js",
     "index.html": "/diet-calculator/index.html",
     "main.073c9b0a.css.map": "/diet-calculator/static/css/main.073c9b0a.css.map",
-    "main.441251b5.js.map": "/diet-calculator/static/js/main.441251b5.js.map",
+    "main.e449a746.js.map": "/diet-calculator/static/js/main.e449a746.js.map",
     "787.14b23cc3.chunk.js.map": "/diet-calculator/static/js/787.14b23cc3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.441251b5.js"
+    "static/js/main.e449a746.js"
   ]
 }
