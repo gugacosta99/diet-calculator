@@ -1,9 +1,3 @@
-@import './_common';
-
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .list {
     display: flex;
     flex-direction: column;
@@ -16,6 +10,7 @@ body {
             font-size: 35px;
             color: $primary-color;
             flex-grow: 9;
+            text-shadow: 2px 2px darken($color: $primary-color, $amount: 30);
         }
         button {
             flex-grow: 3;
@@ -27,33 +22,16 @@ body {
             max-width: 60px;
             margin-top: 50px;
             margin-right: 10px;
-            border-color: lighten($primary-color, 20);
+            border-color: $primary-color;
+            box-shadow: 2px 2px $primary-color;
         }
     }
 
     &-item {
-        list-style: none;
-        list-style-position: inside;
-        border: solid;
-        background-color: $primary-color;
-        color: $secondary-color;
-        height: 60px;
-        border-radius: 12px;
-        margin: 10px;
-        padding-top: 12px;
-        padding-left: 12px;
-        text-align: left;
-        position: relative;
-        
-        box-shadow: 10px 10px;
+        @include button-default;
         
         &::selection {
             background-color: lighten($primary-color, 100);
-        }
-
-        h3 {
-            position: absolute;
-            top: -15px;
         }
     }
 }

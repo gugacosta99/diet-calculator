@@ -1,0 +1,25 @@
+$primary-color: blueviolet;
+$secondary-color: white;
+
+@mixin button-default {
+    list-style: none;
+    list-style-position: inside;
+    border: solid;
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 60px;
+    border-radius: 12px;
+    border-color: darken($color: $primary-color, $amount: 15);
+    margin: 10px;
+    padding-top: 12px;
+    padding-left: 12px;
+    text-align: left;
+    position: relative;
+    
+    box-shadow: 3px 3px darken($color: $primary-color, $amount: 15);
+
+    h3 {
+        position: absolute;
+        top: -15px;
+    }
+}

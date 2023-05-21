@@ -1,6 +1,6 @@
 import PatientList from "./PatientList";
 import PatientNewEdit from "./PatientNewEdit";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function PatientsView(props){
     const [page, setPage] = useState('patientList');
@@ -9,7 +9,7 @@ export default function PatientsView(props){
         if (patients != null) {
             return JSON.parse(patients);
         } else {
-            return [{name: ""}];
+            return [];
         }
     });
     const [patientEdit, setPatientEdit] = useState({});
@@ -20,9 +20,6 @@ export default function PatientsView(props){
             ...patients,
             newPatient
         ])
-
-        let patientsJSON = JSON.stringify(patients)
-        localStorage.setItem("patients", patientsJSON);
     }
 
     function savePatient(patient) {
@@ -35,9 +32,6 @@ export default function PatientsView(props){
                 }
             })
         )
-
-        let patientsJSON = JSON.stringify(patients)
-        localStorage.setItem("patients", patientsJSON);
     }
 
     function editPatient(index){
@@ -45,6 +39,11 @@ export default function PatientsView(props){
         setPage('patientEdit')
         setIndexEdit(index)
     }
+
+    useEffect(() => {
+        let patientsJSON = JSON.stringify(patients)
+        localStorage.setItem("patients", patientsJSON);
+    }, [patients])
 
     let currentPage = <div></div>
     switch (page) {
@@ -54,16 +53,26 @@ export default function PatientsView(props){
                 setPage = {setPage}
                 editPatient = {editPatient}
             />
-        break;
+            break;
     
         case 'patientNew':
+            let newPatient = {
+                nome: "",
+                birthday: "",
+                gender: "",
+                estadoCivil: "",
+                email: "",
+                phone: "",
+                cpf: "",
+                archived: false
+            }
             currentPage = <PatientNewEdit
                 title={"Novo"}
                 save={addPatient}
-                patient={{name: ""}}
+                patient={newPatient}
                 setPage = {setPage}
             />
-        break;
+            break;
     
         case 'patientEdit':
             currentPage = <PatientNewEdit
@@ -72,10 +81,14 @@ export default function PatientsView(props){
                 patient={patientEdit}
                 setPage = {setPage}
             />
-        break;
+            break;
                 
         default:
             break;
+    }
+
+    function flushPatients() {
+        setPatients([]);
     }
 
     return (

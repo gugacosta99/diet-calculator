@@ -2,9 +2,14 @@ import PatientNewEdit from "./PatientNewEdit"
 import { useState } from "react"
 
 export default function PatientList(props){
-    const patientList = props.patients.map((patient, index) => 
-        <li className="list-item" key={index} onClick={() => {props.editPatient(index)}}>{patient.name}</li>
-    )
+    const patientList = props.patients.map((patient, index) => {
+        return (
+            <div className="list-item button" key={index} onClick={() => {props.editPatient(index)}}>
+                <h3>{patient.name}</h3>
+                <p> {patient.phone}<br/> {patient.email}</p>
+            </div>
+        )
+    })
 
     return(
         <div className="list">
@@ -12,9 +17,9 @@ export default function PatientList(props){
                 <h4>Pacientes</h4>
                 <button onClick={() => props.setPage('patientNew')}>+</button>
             </div>
-            <ul>
+            <div>
                 {patientList}
-            </ul>
+            </div>
         </div>
     )
 }

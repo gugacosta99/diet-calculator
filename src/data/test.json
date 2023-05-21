@@ -1,0 +1,69 @@
+{
+    "OrderId": "2000001262-01",
+    "Tipo": "Assinatura",
+    "Frequencia": "Semestral",
+    "NumeroParcelasCiclo": 1,
+    "RenovacaoAutomatica": true,
+    "QuantidadeCiclos": 0,
+    "ValorRecorrencia": 10,
+    "transacao": {
+        "amount": 10,
+        "softDescriptor": "GoDigitalEdu",
+        "installments": "1",
+        "orderId": "2000001263-01",
+        "cliente": {
+            "externalId": "null",
+            "type": "individual",
+            "country": "br",
+            "name": "aaa aaa",
+            "email": "aa@aa.aa",
+            "dateCreated": "2023-05-18T10:24:07.007Z",
+            "document": [
+                {
+                    "type": "cpf",
+                    "number": "26961407900"
+                }
+            ],
+            "phoneNumbers": [
+                {
+                    "Value": "+5581999999999"
+                }
+            ]
+        },
+        "billing": {
+            "name": "aaa aaa",
+            "address": {
+                "country": "br",
+                "state": "SP",
+                "city": "São Paulo",
+                "neighborhood": "Sé",
+                "street": "Praça da Sé",
+                "street_number": "1",
+                "zipcode": "01001001"
+            }
+        },
+        "item": [
+            {
+                "id": "12429",
+                "title": "PEIXE 30",
+                "unit_price": 10,
+                "quantity": 1,
+                "subTotal": 10,
+                "jurosPercentual": 0,
+                "jurosTotal": 0,
+                "descontoPercentual": 0,
+                "descontoTotal": 0
+            }
+        ],
+        "cartoes": [
+            {
+                "cardNumber": "5448280000000007",
+                "cardCvv": "123",
+                "cardExpirationDate": "0128",
+                "cardHolderName": "aa aaa",
+                "installments": "1",
+                "amountDecimal": 10
+            }
+        ]
+    }
+}
